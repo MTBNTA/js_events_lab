@@ -1,5 +1,6 @@
 const toDoForm = document.querySelector("#todo-form");
 const list = document.querySelector("#list");
+const dateText = document.querySelector("#date");
 
 toDoForm.addEventListener("submit", (evt) => {
     evt.preventDefault();
@@ -12,4 +13,9 @@ toDoForm.addEventListener("submit", (evt) => {
 function Delete(currentEl){
     const listItem = currentEl.parentElement;
     listItem.remove();
+}
+
+function showDate(){
+    const now = new Date();
+    dateText.innerText = now.toLocaleString();
 }
